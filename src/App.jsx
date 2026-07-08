@@ -22,7 +22,7 @@ import {
 } from "@phosphor-icons/react";
 
 const fallbackData = {
-  updatedAt: "2026-07-09 10:30",
+  updatedAt: "2026-07-09 01:49",
   nextReview: "建议每30-60分钟核验一次",
   sourceSummary: "横州发布、南宁发布、广西新闻网等公开渠道",
   officialChannels: [
@@ -260,7 +260,7 @@ export function App() {
         </div>
         <div className="topbar-actions">
           <span className="update-pill">动态信息</span>
-          <span>最后同步：{data.updatedAt}</span>
+          <span>数据核验：{data.updatedAt}</span>
           <button className="ghost">
             <HouseLine size={18} weight="duotone" />
             返回首页
@@ -293,7 +293,7 @@ export function App() {
         <div>
           <ClockCounterClockwise size={22} weight="duotone" />
           <strong>{data.updatedAt}</strong>
-          <span>页面数据最后同步时间</span>
+          <span>页面数据最近核验时间</span>
         </div>
         <div>
           <ArrowClockwise size={22} weight="duotone" />
