@@ -29,25 +29,29 @@ const fallbackData = {
     {
       name: "横州市慈善会",
       role: "抗洪救灾爱心募捐倡议发布单位",
-      link: "以横州发布 / 南宁发布原文为准",
+      link: "查看募捐倡议公开来源",
+      url: "https://v.gxnews.com.cn/sp/21966809",
       badge: "官方倡议",
     },
     {
       name: "南宁市慈善总会",
       role: "南宁市台风受灾区域群众救灾重建募捐",
-      link: "咨询热线：0771-5567012、5527228",
+      link: "查看南宁市慈善总会倡议",
+      url: "https://v.gxnews.com.cn/sp/21966809",
       badge: "官方渠道",
     },
     {
       name: "横州市应急管理局",
       role: "防汛救灾与应急处置权威信息",
-      link: "请以官方通报为准",
+      link: "打开横州市人民政府官网",
+      url: "https://www.gxhx.gov.cn/",
       badge: "官方信息",
     },
     {
       name: "横州发布 / 南宁发布",
       role: "权威通告、募捐倡议、辟谣信息发布",
-      link: "微信公众号官方发布",
+      link: "查看权威公开转载来源",
+      url: "https://v.gxnews.com.cn/sp/21966809",
       badge: "权威发布",
     },
   ],
@@ -316,7 +320,9 @@ export function App() {
                 <div>
                   <h3>{item.name}<Badge>{item.badge}</Badge></h3>
                   <p>{item.role}</p>
-                  <a href="#channels">{item.link}</a>
+                  <a className="channel-link" href={item.url} target="_blank" rel="noreferrer">
+                    {item.link} <ArrowRight size={14} />
+                  </a>
                 </div>
                 <Badge>公开渠道</Badge>
               </article>

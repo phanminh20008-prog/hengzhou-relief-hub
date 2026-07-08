@@ -616,6 +616,14 @@ p {
   font-size: 12px;
 }
 
+.channel-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  font-weight: 800;
+}
+
 .channel-row p {
   color: var(--muted);
 }
