@@ -62,6 +62,7 @@ const fallbackData = {
         "备注：抗洪救灾+姓名/单位+联系电话",
       ],
       source: "来源：横州市慈善会抗洪救灾爱心募捐倡议书",
+      sourceUrl: "https://v.gxnews.com.cn/sp/21966809",
       verified: "需二次核对官方原文后使用",
     },
     {
@@ -73,6 +74,7 @@ const fallbackData = {
         "建议先电话确认当日急需清单和接收时间",
       ],
       source: "来源：横州市慈善会抗洪救灾爱心募捐倡议书",
+      sourceUrl: "https://v.gxnews.com.cn/sp/21966809",
       verified: "公开渠道",
     },
     {
@@ -84,15 +86,45 @@ const fallbackData = {
         "建议通过官方页面确认收款账户与开票流程",
       ],
       source: "来源：南宁市慈善总会募捐倡议",
+      sourceUrl: "https://m.nn.bendibao.com/news/79746.shtm",
       verified: "公开渠道",
     },
   ],
+  materialChannels: [
+    {
+      title: "横州市慈善会物资接收点",
+      priority: "首选正规接收点",
+      contact: "办公室 0771-3480685；张树民 18977127766；卫晊荧 15207816816",
+      address: "横州市横州镇柳明路130号横州市民政局一楼",
+      action: "捐赠前先电话确认当日急需品类、数量、接收时间和运输方式。",
+      source: "横州市慈善会抗洪救灾爱心募捐倡议书",
+      sourceUrl: "https://v.gxnews.com.cn/sp/21966809"
+    },
+    {
+      title: "横州市应急管理局救灾股",
+      priority: "应急物资官方对接",
+      contact: "救灾股电话 7204510；手机 18178602534",
+      address: "按电话指引送达指定接收点",
+      action: "适合批量物资、运输车辆、应急设备等先行对接，避免盲目送货。",
+      source: "广西新闻网转载官方募捐信息",
+      sourceUrl: "https://v.gxnews.com.cn/sp/21966809"
+    },
+    {
+      title: "南宁市慈善总会物资对接",
+      priority: "南宁市级统筹通道",
+      contact: "物资对接热线 0771-5567012、0771-5527228",
+      address: "南宁市青秀区长湖路5号办公楼2楼205室",
+      action: "适合面向南宁市受灾区域的物资咨询、票据和统筹对接。",
+      source: "南宁市慈善总会募捐倡议",
+      sourceUrl: "https://m.nn.bendibao.com/news/79746.shtm"
+    }
+  ],
   supplies: [
-    { name: "饮用水", level: "紧缺", note: "优先确认安置点当日需求", trend: "持续需要" },
-    { name: "方便食品", level: "紧缺", note: "适合即食、易分发、保质期明确", trend: "持续需要" },
-    { name: "雨衣雨鞋", level: "紧缺", note: "用于转运、装卸、清淤场景", trend: "需要核量" },
-    { name: "消杀用品", level: "重点", note: "灾后清洁与卫生防疫使用", trend: "逐步上升" },
-    { name: "照明/电源", level: "重点", note: "手电、电池、移动电源等", trend: "按点位匹配" },
+    { name: "饮用水", level: "紧缺", note: "官方倡议列为最急需物资之一", needed: "数量需电话核量", received: "未公开统一到货量", gap: "以接收点当日口径为准" },
+    { name: "生活食品", level: "紧缺", note: "方便食品、即食食品、保质期明确", needed: "数量需电话核量", received: "未公开统一到货量", gap: "以接收点当日口径为准" },
+    { name: "防汛被褥", level: "紧缺", note: "南宁市慈善总会倡议列为急需", needed: "数量需电话核量", received: "未公开统一到货量", gap: "以接收点当日口径为准" },
+    { name: "应急生活用品", level: "紧缺", note: "日用品、照明、电源、简易清洁用品等", needed: "数量需电话核量", received: "未公开统一到货量", gap: "以接收点当日口径为准" },
+    { name: "消杀清理用品", level: "重点", note: "灾后清洁、消杀、清淤阶段使用", needed: "随灾后恢复上升", received: "未公开统一到货量", gap: "以接收点当日口径为准" },
   ],
   frontline: [
     {
@@ -304,7 +336,25 @@ export function App() {
                   {item.details.map((detail) => <li key={detail}>{detail}</li>)}
                 </ul>
                 <p>{item.source}</p>
+                {item.sourceUrl && <a className="source-link" href={item.sourceUrl} target="_blank" rel="noreferrer">查看公开来源 <ArrowRight size={14} /></a>}
                 <span className="verify-line"><SealCheck size={16} weight="duotone" />{item.verified}</span>
+              </article>
+            ))}
+          </div>
+        </Panel>
+
+        <Panel title="官方捐物资通道" subtitle="最重要：先联系，再送达" icon={Truck} className="material-panel">
+          <div className="material-list">
+            {data.materialChannels.map((item) => (
+              <article className="material-card" key={item.title}>
+                <div className="donation-title">
+                  <h3>{item.title}</h3>
+                  <Badge tone="green">{item.priority}</Badge>
+                </div>
+                <p><strong>联系方式：</strong>{item.contact}</p>
+                <p><strong>接收地址：</strong>{item.address}</p>
+                <p><strong>操作建议：</strong>{item.action}</p>
+                <a className="source-link" href={item.sourceUrl} target="_blank" rel="noreferrer">查看来源：{item.source} <ArrowRight size={14} /></a>
               </article>
             ))}
           </div>
@@ -319,7 +369,9 @@ export function App() {
                   <p>{item.note}</p>
                 </div>
                 <Badge tone={item.level === "紧缺" ? "red" : "orange"}>{item.level}</Badge>
-                <span>{item.trend}</span>
+                <span>需求数量：{item.needed}</span>
+                <span>已到/已公开：{item.received}</span>
+                <span>缺口口径：{item.gap}</span>
               </article>
             ))}
           </div>

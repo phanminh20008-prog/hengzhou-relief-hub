@@ -23,7 +23,7 @@
 /* Public-only relief information view */
 .public-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1.4fr 1fr 0.9fr;
+  grid-template-columns: 1fr 1.25fr 1.2fr 0.95fr 0.85fr;
   gap: 14px;
   padding: 0 26px;
 }
@@ -71,17 +71,33 @@
   border-color: #bdd2ec;
 }
 
-.donation-list {
+.material-panel {
+  border-color: #a9d6bd;
+  background: linear-gradient(#ffffff, #ffffff 64%, #f3fff7);
+}
+
+.material-panel .panel-head {
+  background: #effaf3;
+}
+
+.donation-list,
+.material-list {
   display: grid;
   gap: 12px;
   padding: 14px;
 }
 
-.donation-card {
+.donation-card,
+.material-card {
   padding: 14px;
   border: 1px solid #e2ebf5;
   border-radius: 8px;
   background: #fbfdff;
+}
+
+.material-card {
+  border-color: #cfe9da;
+  background: #fbfffd;
 }
 
 .donation-title {
@@ -123,6 +139,27 @@
   font-weight: 800;
 }
 
+.source-link {
+  margin-top: 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #1d5fc0;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.material-card p {
+  margin-top: 8px;
+  color: #384760;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.material-card strong {
+  color: #17335d;
+}
+
 .supply-public {
   padding-top: 12px;
 }
@@ -150,6 +187,12 @@
   grid-column: 1 / -1;
   color: #384760;
   font-weight: 700;
+}
+
+.supply-public-row > span:nth-of-type(2),
+.supply-public-row > span:nth-of-type(3) {
+  color: var(--muted);
+  font-weight: 600;
 }
 
 .frontline-list {
