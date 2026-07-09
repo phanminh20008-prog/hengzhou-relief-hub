@@ -22,7 +22,7 @@ import {
 } from "@phosphor-icons/react";
 
 const fallbackData = {
-  updatedAt: "2026-07-09 01:49",
+  updatedAt: "2026-07-09 12:34",
   nextReview: "建议每30-60分钟核验一次",
   sourceSummary: "横州发布、南宁发布、广西新闻网等公开渠道",
   officialChannels: [
@@ -132,22 +132,36 @@ const fallbackData = {
   ],
   frontline: [
     {
-      area: "横州镇及周边安置点",
+      area: "横州镇、校椅镇、云表镇等临时安置点",
       status: "安置保障",
-      summary: "公开信息显示，饮用水、方便食品、被褥、照明等保障类物资仍需按安置点核量匹配。",
-      time: "待官方滚动更新",
+      summary: "新华社报道，横州市已在多个乡镇设置6个临时安置点，配备饮用水、方便食品、被褥、应急照明等生活必需物资；部分安置点现场发放方便面、面包、饮用水等。",
+      time: "7月9日12:34核验",
+      source: "新华社防汛救灾一线见闻",
+      sourceUrl: "https://www.news.cn/20260708/70741643fb9f463f8bebadbb7c21b6fc/c.html",
     },
     {
-      area: "云表镇、校椅镇、六景镇等受影响区域",
-      status: "道路与转运",
-      summary: "部分道路、低洼区域和村屯转运需求需以现场指挥和官方通报为准，不建议个人自行前往。",
-      time: "待官方滚动更新",
+      area: "云表镇及周边医疗保障点",
+      status: "医疗保障",
+      summary: "新华社通报，横州市云表镇、宾阳县甘棠镇等地设置11个临时医疗点，提供24小时医疗救治服务，配备常用药品和急救设备。",
+      time: "7月9日12:34核验",
+      source: "新华社/新华网通报",
+      sourceUrl: "https://www.news.cn/20260707/83d36f41d57c4ae79041451a8aa103e0/c.html",
     },
     {
-      area: "灾后恢复阶段",
-      status: "清理消杀",
-      summary: "积水退去后，消杀、清淤、生活物资补给和困难群众帮扶会成为后续重点。",
-      time: "待官方滚动更新",
+      area: "云表镇等仍受积水影响区域",
+      status: "物资转运",
+      summary: "封面新闻7月9日现场报道，公羊救援队在云表镇用无人机向洪水尚未退去的村庄运送物资，现场至少20台无人机参与；涉险水库区域降雨仍会对抢险救援和安置造成不利影响。",
+      time: "7月9日12:34核验",
+      source: "封面新闻现场报道",
+      sourceUrl: "https://cbgc.scol.com.cn/news/7741349",
+    },
+    {
+      area: "灾后恢复与公共设施抢修",
+      status: "恢复抢修",
+      summary: "中国新闻网报道，南宁统筹专业力量加急抢修受损水库坝体、道路、河堤、排水管网等公共基础设施，并安排救灾资金用于救灾恢复。",
+      time: "7月9日12:34核验",
+      source: "中国新闻网广西频道",
+      sourceUrl: "https://www.gx.chinanews.com.cn/sh/2026-07-08/detail-ihfhcvui3802561.shtml",
     },
   ],
   rumorTips: [
@@ -419,6 +433,7 @@ export function App() {
                   <h3>{item.area}<Badge tone="blue">{item.status}</Badge></h3>
                   <p>{item.summary}</p>
                   <time>{item.time}</time>
+                  {item.sourceUrl && <a className="frontline-source" href={item.sourceUrl} target="_blank" rel="noreferrer">来源：{item.source} <ArrowRight size={14} /></a>}
                 </div>
               </article>
             ))}
