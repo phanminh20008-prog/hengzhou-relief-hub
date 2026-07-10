@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-10 20:34",
+  "updatedAt": "2026-07-11 00:24",
   "nextReview": "建议每30-60分钟核验一次",
   "sourceSummary": "横州发布、南宁发布、广西新闻网、新华社、广西日报/澎湃新闻等公开渠道",
   "officialChannels": [
@@ -207,6 +207,14 @@
       "time": "7月10日14:42核验",
       "source": "央视网 / 云表镇政府回应",
       "sourceUrl": "https://news.cctv.com/2026/07/10/ARTItYyqI6ZNUYBhj3cHiYww260710.shtml"
+    },
+    {
+      "area": "云表镇深处搜救与清淤重建",
+      "status": "洪水回落后仍在搜救保供",
+      "summary": "新华社7月10日21:41报道提到，云表镇洪水水位已下降，现场部分救援人员继续参与清淤和重建；另有队伍继续前往云表镇深处搜救并运送物资，确保不落下一名受困群众。",
+      "time": "7月11日00:24核验",
+      "source": "新华社",
+      "sourceUrl": "https://www.news.cn/20260710/72f1cedb0a234c4fa0a45a20974eeb31/c.html"
     },
     {
       "area": "云表镇现场医疗点及蛇伤救治通道",
